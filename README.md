@@ -7,4 +7,4 @@ Mini projects repository — a sandbox of small ideas and creative code
 ## 🔍 Mini Projects
 
  - [Password Generator (python)](https://github.com/pedromf3/mini-lab/tree/main/Password_Generator)
- - [Aveiro Weather (python)](https://github.com/pedromf3/mini-lab/tree/main/Aveiro_Weather)
+ - [Global Weather (python)](https://github.com/pedromf3/mini-lab/tree/main/Global_Weather)
