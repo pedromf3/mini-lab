@@ -1,21 +1,29 @@
 # Aveiro Weather Forecast
 # Author: Pedro Ferreira
-# Last Updated: April 10, 2025
-# Version 1.2
+# Last Updated: April 18, 2025
+# Version 1.3
 
 import requests
 import matplotlib.pyplot as plt
 
-with open('api_key.txt', 'r') as file:
-    key = file.read().strip()
-    
-url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Aveiro?unitGroup=metric&key={key}"
+# API url Configuration
+def get_url_local():
+    local = input("Enter the location (e.g., Aveiro): ")
 
-def main():
+    with open('api_key.txt', 'r') as file:
+        key = file.read().strip()
+
+    url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{local}?unitGroup=metric&key={key}"
+
+    return url, local
+
+def main(): 
     day = []
     maxtemp = []
     mintemp = []   
     rain = [] 
+    
+    url, local = get_url_local()
 
     try:
         response = requests.get(url)
@@ -51,7 +59,7 @@ def main():
     ax2.tick_params(axis='y')
     ax2.legend(loc='upper right')
 
-    plt.title('Aveiro Weather')
+    plt.title(local + ' Weather')
     ax1.set_zorder(ax2.get_zorder() + 1) 
     ax1.patch.set_visible(False)
 
