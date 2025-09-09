@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-from Global_Weather.wxtracker import get_weather_data
-from Password_Generator.gen_password import generate_password
+from global_weather.wxtracker import get_weather_data
+from password_generator.gen_password import generate_password
 
 app = Flask(__name__)
 
